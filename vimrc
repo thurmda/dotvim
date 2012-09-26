@@ -6,6 +6,9 @@ set nocompatible
 set ruler 
 set number
 
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
 "
 "set smartindent
 "set tabstop=4
