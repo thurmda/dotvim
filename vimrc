@@ -17,7 +17,7 @@ set sidescroll=1
 "set paste
 syntax on
 
-colo desert
+colorscheme 256-gray
 "Filetype
 set filetype=on
 filetype plugin on
@@ -63,3 +63,5 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 let g:SuperTabDefaultCompletionType = "context"
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
