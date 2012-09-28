@@ -3,7 +3,7 @@ call pathogen#helptags()
 
 set nocompatible
 
-set ruler 
+set ruler
 set number
 
 set scrolloff=8
@@ -65,3 +65,22 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let g:SuperTabDefaultCompletionType = "context"
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+map <s-left> : tabprevious<CR>
+map <s-right> : tabnext<CR>
+
+
+" WHITESPACE
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+
