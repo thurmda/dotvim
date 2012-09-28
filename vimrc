@@ -17,7 +17,11 @@ set sidescroll=1
 "set paste
 syntax on
 
+if $TERM == "xterm-256color"
+      set t_Co=256
+endif
 colorscheme 256-gray
+
 "Filetype
 set filetype=on
 filetype plugin on
@@ -84,3 +88,5 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
+set backupdir=~/tmp
+set noswapfile
