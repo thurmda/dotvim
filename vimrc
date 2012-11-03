@@ -90,3 +90,4 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 set backupdir=~/tmp
 set noswapfile
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
