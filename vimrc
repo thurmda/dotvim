@@ -5,7 +5,7 @@ set nocompatible
 
 set ruler
 set number
-
+set hlsearch
 set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
@@ -66,8 +66,20 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+
+"JSBeautify
+map <c-f> :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+
 let g:SuperTabDefaultCompletionType = "context"
 autocmd VimEnter * NERDTree
+let NERDTreeIgnore= ['^CVS$']
 autocmd VimEnter * wincmd p
 
 map <s-left> : tabprevious<CR>
