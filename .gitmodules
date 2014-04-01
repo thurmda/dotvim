@@ -20,3 +20,6 @@
 [submodule "bundle/jshint2"]
 	path = bundle/jshint2
 	url = git@github.com:Shutnik/jshint2.vim.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
