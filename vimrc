@@ -5,6 +5,7 @@ set nocompatible
 
 set ruler
 set number
+set hlsearch
 
 set scrolloff=8
 set sidescrolloff=15
@@ -20,7 +21,9 @@ syntax on
 if $TERM == "xterm-256color"
       set t_Co=256
 endif
-colorscheme 256-gray
+"colorscheme 256-gray
+"PRESENTATIONS
+colorscheme delek
 
 "Filetype
 set filetype=on
@@ -59,12 +62,19 @@ autocmd FileType php set ts=4
 autocmd FileType php set sts=4
 autocmd FileType php set textwidth=79
 
-
+" Markdown (tab width 4 chr, wrap at 79th)
+autocmd FileType markdown set sw=4
+autocmd FileType markdown set ts=4
+autocmd FileType markdown set sts=4
+autocmd FileType markdown set textwidth=79
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType ejs set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 let g:SuperTabDefaultCompletionType = "context"
 autocmd VimEnter * NERDTree
@@ -91,3 +101,64 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 set backupdir=~/tmp
 set noswapfile
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+"Markdown to HTML  
+"nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>  
+"</cr></leader> 
+
+"Markdown to HTML  
+map md :%!/Users/thurmda/bin/Markdown.pl --html4tags <cr>  
+
+"https://github.com/acook/config/blob/master/dotfiles/.vimrc#L276
+" make mouse scrolling work in vim!!!
+map <M-Esc>[62~ <ScrollWheelUp>
+map <M-Esc>[63~ <ScrollWheelDown>
+map <M-Esc>[64~ <S-ScrollWheelUp>
+map <M-Esc>[65~ <S-ScrollWheelDown>
+map! <M-Esc>[62~ <ScrollWheelUp>
+map! <M-Esc>[63~ <ScrollWheelDown>
+map! <M-Esc>[64~ <S-ScrollWheelUp>
+map! <M-Esc>[65~ <S-ScrollWheelDown>
+
+" make keypad work in vim with iTerm on OS X!
+map <Esc>Oq 1
+map <Esc>Or 2
+map <Esc>Os 3
+map <Esc>Ot 4
+map <Esc>Ou 5
+map <Esc>Ov 6
+map <Esc>Ow 7
+map <Esc>Ox 8
+map <Esc>Oy 9
+map <Esc>Op 0
+map <Esc>On .
+map <Esc>OQ /
+map <Esc>OR *
+map <kPlus> +
+map <Esc>OS -
+map! <Esc>Oq 1
+map! <Esc>Or 2
+map! <Esc>Os 3
+map! <Esc>Ot 4
+map! <Esc>Ou 5
+map! <Esc>Ov 6
+map! <Esc>Ow 7
+map! <Esc>Ox 8
+map! <Esc>Oy 9
+map! <Esc>Op 0
+map! <Esc>On .
+map! <Esc>OQ /
+map! <Esc>OR *
+map! <kPlus> +
+map! <Esc>OS -
+
+"vim-jsbeautify
+".vimrc
+
+map <c-f> :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
