@@ -64,7 +64,9 @@ autocmd FileType php set textwidth=79
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd BufRead,BufNewFile *.tmp,*.tps set filetype=html
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd BufRead,BufNewFile *.less,*.sas set filetype=css
 
 let g:SuperTabDefaultCompletionType = "context"
 autocmd VimEnter * NERDTree
