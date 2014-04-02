@@ -2,7 +2,7 @@ inspired by http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodul
 
 Installation:
 
-    git clone git://github.com/nelstrom/dotvim.git ~/.vim
+    git clone git@github.com:thurmda/dotvim.git ~/.vim
 
 Create symlinks:
 
