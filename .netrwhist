@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/dthurman/code/CMWEB/prod'
+let g:netrw_dirhist_2='/Users/dthurman/code/CMWEB/prod/css'
+let g:netrw_dirhist_3='/Users/dthurman/code/CMWEB/prod'
+let g:netrw_dirhist_4='/Users/dthurman/code/r6/listen_and_engage_web'
