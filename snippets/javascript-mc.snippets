@@ -1,0 +1,25 @@
+snippet mcview
+	/*
+	author: `eval(git config user.name)`
+	created: `strftime("%Y-%m-%d")`
+	*/
+	define('${1:cmweb.}', 
+	['backbone', 'underscore', 'text!$1.tpl'],
+	function(Backbone, _, template){
+		var View = Backbone.View.extend({
+			template: _.template(templte),
+			initialize: function(){
+				${2}
+			},
+			render: function(){
+				var viewModel = _.extend({}, this.model, {
+					label :{
+						${3}
+					}
+				});
+				this.$el.html(this.template(viewModel));
+			}
+		});
+		return View;
+	});
+snippet mcview
