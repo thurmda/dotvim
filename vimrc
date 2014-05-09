@@ -23,7 +23,8 @@ if $TERM == "xterm-256color"
 endif
 "colorscheme 256-gray
 "PRESENTATIONS
-colorscheme delek
+"colorscheme delek
+colorscheme molokai
 
 "Filetype
 set filetype=on
